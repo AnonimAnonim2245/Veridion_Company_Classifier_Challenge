@@ -271,7 +271,7 @@ If top score ≤ 0.30 or all labels fail filtering, apply multi-layer recovery:
 This system combines **contextual embeddings**, **semantic graphs**, and **domain-aware heuristics** into a robust pipeline for **high-precision company labeling**.  
 It handles **noisy, multilingual business data** through layered filtering, label decomposition, and semantic recovery — making it scalable, interpretable, and production-ready.  
 Throughout the process, we consistently chose the **lesser of two semantic evils**: always selecting a label, but favoring safer, broadly accurate matches over overly specific or potentially misleading ones.  
-Ambiguity was addressed through multi-layered reranking, fallback matrices, and heuristics that penalized overconfident false positives — ensuring both full label coverage and high trust 
+Ambiguity was addressed through multi-layered reranking, fallback matrices, and heuristics that penalized overconfident false positives — ensuring both full label coverage and high trust in output quality.
 
 # Final Reflection
 Initially, I was not so familiar with machine learning, but after doing this task, I can confidently say that I learned a lot. After a week, I thought that I finished the task, but I was wrong.
