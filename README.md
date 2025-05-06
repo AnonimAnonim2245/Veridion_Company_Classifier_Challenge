@@ -264,11 +264,22 @@ If top score ≤ 0.30 or all labels fail filtering, apply multi-layer recovery:
 - **Parallelization Caveats**: While the solution leverages parallel processing to speed up computations, this can lead to **resource saturation** on less powerful machines. In practice, the process may require avoiding heavy multitasking during execution to prevent crashes or slowdowns.
 - **Contextual Over-association with Related Terms**: The system may overemphasize semantically related tokens without distinguishing structural roles. For instance, a **glassware retailer** may be mislabeled as a **beverage manufacturer** due to contextual proximity between *glass*, *mugs*, and *drinks*. This points to a limitation of relying solely on term proximity without modeling **intent or function**.
 
-- **Contextual Precision Tradeoff**: While the anchor selection aims to identify the most semantically aligned label, limitations in `context_matrix` and `embeddings_index` may occasionally result in selecting the 2nd or 3rd best option. 
+- **Contextual Precision Tradeoff**: While the anchor selection aims to identify the most semantically aligned label, limitations in `context_matrix` and `embeddings_index` may occasionally result in selecting the 2nd or 3rd best option.
 
 # Summary
 
 This system combines **contextual embeddings**, **semantic graphs**, and **domain-aware heuristics** into a robust pipeline for **high-precision company labeling**.  
 It handles **noisy, multilingual business data** through layered filtering, label decomposition, and semantic recovery — making it scalable, interpretable, and production-ready.  
 Throughout the process, we consistently chose the **lesser of two semantic evils**: always selecting a label, but favoring safer, broadly accurate matches over overly specific or potentially misleading ones.  
-Ambiguity was addressed through multi-layered reranking, fallback matrices, and heuristics that penalized overconfident false positives — ensuring both full label coverage and high trust in output quality.
+Ambiguity was addressed through multi-layered reranking, fallback matrices, and heuristics that penalized overconfident false positives — ensuring both full label coverage and high trust 
+
+# Final Reflection
+Initially, I was not so familiar with machine learning, but after doing this task, I can confidently say that I learned a lot. After a week, I thought that I finished the task, but I was wrong.
+
+I found myself returning to the problem again and again, rethinking the approach and adjusting my methods as I discovered edge cases or overlooked essential details.
+This project helped me grow in many ways. I began to structure the code in a manner that is easier to understand and take into consideration ways in which I can optimize my code. I discovered the importance of each line of code and how a single line could make a difference in terms of time execution. In addition, I grasped semantic modeling by using embeddings such as Sentence Transformers and ConceptNet, and learned how to handle noisy and multilingual data that keeps the system robust. I relied on a reasoning-based approach, where fallback logic, disambiguation, and custom heuristics played a role.
+
+I’m personally proud of this; it’s the most complex and thorough project I’ve developed so far. I invested so much into it because I genuinely enjoyed the task, and I wanted to submit something that I could truly be proud of.
+
+
+in output quality.
